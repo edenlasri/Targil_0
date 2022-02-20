@@ -40,9 +40,9 @@ let HandleSell ProductName Amount Price path =
     let Cost=amount*price|>string
     let t= [result+ "$$$ CELL " + ProductName+ " $$$" + Environment.NewLine+ Cost]
     File.WriteAllLines(path,t)
+     
 
-
-let readLines (filePath:string) = seq {
+let readLines (filePath:string) = seq { 
     use sr = new StreamReader (filePath)
     while not sr.EndOfStream do
         yield sr.ReadLine ()
